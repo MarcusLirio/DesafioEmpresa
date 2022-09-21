@@ -1,0 +1,91 @@
+<div class="container">
+    <div style="margin-top: 10px;">
+    <mat-form-field appearance="standard">
+      <mat-label>Pesquisa</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Pesquisar" #input>
+    </mat-form-field>
+    
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+    
+        <ng-container matColumnDef="DS_CAMPO">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Pressão Arterial (mmHg)</th>
+          <td mat-cell *matCellDef="let row"> {{row.DS_CAMPO}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="NRO_ORDENACAO">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Número de Ordenação</th>
+          <td mat-cell *matCellDef="let row"> {{row.NRO_ORDENACAO}} </td>
+        </ng-container>
+  
+          
+        <ng-container matColumnDef="SEXO">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Sexo</th>
+          <td mat-cell *matCellDef="let row"> {{row.SEXO}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="IN_OBRIGATORIO">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>IN_OBRIGATORIO</th>
+          <td mat-cell *matCellDef="let row"> {{row.IN_OBRIGATORIO}} </td>
+        </ng-container>
+  
+        
+        <ng-container matColumnDef="CHAVE1">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Chave 1 </th>
+          <td mat-cell *matCellDef="let row"> {{row.CHAVE1}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="CHAVE2">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Chave 2 </th>
+          <td mat-cell *matCellDef="let row"> {{row.CHAVE2}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="TIPO">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </th>
+          <td mat-cell *matCellDef="let row"> {{row.TIPO}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="LIMITE">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Limite </th>
+          <td mat-cell *matCellDef="let row"> {{row.LIMITE}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="TIPO2">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo 2 </th>
+          <td mat-cell *matCellDef="let row"> {{row.TIPO2}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="LIMITE2">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Limite 2 </th>
+          <td mat-cell *matCellDef="let row"> {{row.LIMITE2}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="OPCOES">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Opções </th>
+          <td mat-cell *matCellDef="let row"> {{row.OPCOES}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="ACOES">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Ações </th>
+            <td mat-cell *matCellDef="let row">
+                <button (click)="editDados(row)" mat-icon-button color="primary">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button (click)="deletarDados(row.id)" mat-icon-button color="warn">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+          </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+    </div>
+  </div>
