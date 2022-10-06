@@ -1,62 +1,33 @@
-<h1 mat-dialog-title>Adicionar Parametros</h1>
+<h1 mat-dialog-title>Adicionar Produto</h1>
 <div mat-dialog-content>
   <form [formGroup]="produtoForm">
     <mat-form-field appearance="outline">
-        <mat-label>Pressão Arterial (mmHg)</mat-label>
-        <input formControlName="DS_CAMPO" matInput placeholder="DS_CAMPO">
-        <!-- <mat-select>
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{food.viewValue}}
-            </mat-option>
-          </mat-select> -->
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Número de Ordenação</mat-label>
-        <input formControlName="NRO_ORDENACAO" matInput placeholder="NRO_ORDENACAO">
-      </mat-form-field>
+      <mat-label>Produto</mat-label>
+      <input formControlName="Produto" matInput placeholder="Produto">
+    </mat-form-field>
       <mat-form-field style="margin-left: 5px;" appearance="outline">
-        <mat-label>Sexo</mat-label>
-        <mat-select formControlName="SEXO">
-            <mat-option *ngFor="let sexo of sexos" [value]="sexo.value">
-              {{sexo.viewValue}}
-            </mat-option>
-          </mat-select>
-      </mat-form-field>
-      <mat-form-field style="margin-left: 5px;" appearance="outline">
-        <mat-label>IN_OBRIGATORIO</mat-label>
-        <mat-select formControlName="IN_OBRIGATORIO">
-            <mat-option *ngFor="let obrigatorio of obrigatorios" [value]="obrigatorio.invalue">
-              {{obrigatorio.inviewValue}}
+        <mat-label>Tipo Do Produto</mat-label>
+        <mat-select formControlName="Tipo_do_produto">
+            <mat-option *ngFor="let celulares of celular" [value]="celulares.value">
+              {{celulares.viewValue}}
             </mat-option>
           </mat-select>
       </mat-form-field>
       <mat-form-field appearance="outline">
-        <mat-label>Chave 1</mat-label>
-        <input formControlName="CHAVE1" matInput placeholder="CHAVE1">
+        <mat-label>Valor</mat-label>
+        <input formControlName="Valor" matInput placeholder="Valor">
       </mat-form-field>
       <mat-form-field appearance="outline">
-        <mat-label>Chave 2</mat-label>
-        <input formControlName="CHAVE2" matInput placeholder="CHAVE2">
+        <mat-label>Itens Acompanhantes</mat-label>
+        <input formControlName="Itens_Acompanhantes" matInput placeholder="Itens_Acompanhantes">
       </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Tipo</mat-label>
-        <input formControlName="TIPO" type="number" matInput placeholder="TIPO">
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Limite</mat-label>
-        <input formControlName="LIMITE" matInput placeholder="LIMITE">
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Tipo 2</mat-label>
-        <input formControlName="TIPO2" matInput placeholder="TIPO2">
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Limite 2</mat-label>
-        <input formControlName="LIMITE2" matInput placeholder="LIMITE2">
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Opções</mat-label>
-        <input formControlName="OPCOES" matInput placeholder="OPCOES">
+      <mat-form-field style="margin-left: 5px;" appearance="outline">
+        <mat-label>Equipe</mat-label>
+        <mat-select formControlName="Equipe">
+            <mat-option *ngFor="let equipes of equipe" [value]="equipes.invalue">
+              {{equipes.inviewValue}}
+            </mat-option>
+          </mat-select>
       </mat-form-field>
   </form>
 </div>

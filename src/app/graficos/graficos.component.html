@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-sm-6">
+        <ngx-charts-pie-chart
+        [scheme]="colorScheme"
+        [results]="single"
+        [gradient]="gradient"
+        [legend]="showLegend"
+        [legendPosition]="legendPosition"
+        [labels]="showLabels"
+        [doughnut]="isDoughnut"
+        (select)="onSelect($event)"
+        (activate)="onActivate($event)"
+        (deactivate)="onDeactivate($event)"
+        >
+        </ngx-charts-pie-chart>
+    </div>
+    <div class="col-sm-6">
+        <ngx-charts-bar-vertical
+        [scheme]="colorScheme"
+        [results]="horizontal"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        (select)="onSelect($event)">
+        </ngx-charts-bar-vertical>
+    </div>
+</div>

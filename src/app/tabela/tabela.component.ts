@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ApiService } from '../Services/api.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
@@ -13,13 +13,12 @@ import {MatDialog} from '@angular/material/dialog';
 export class TabelaComponent implements OnInit {
 
   constructor(private api: ApiService,public dialogo: MatDialog) { }
-  displayedColumns: string[] = ['DS_CAMPO', 'NRO_ORDENACAO', 'SEXO', 'IN_OBRIGATORIO','CHAVE1', 'CHAVE2', 'TIPO', 'LIMITE', 'TIPO2', 'LIMITE2', 'OPCOES', 'ACOES'];
-  dataSource!: MatTableDataSource<any>;
+  @Input() displayedColumns: string[] = [];
+  @Input() dataSource!: MatTableDataSource<any>;
+
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
-
 
   ngOnInit(): void {
     this.getTodosDados();

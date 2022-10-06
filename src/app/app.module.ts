@@ -17,12 +17,15 @@ import {MatTableModule} from '@angular/material/table';
 import { TabelaComponent } from './tabela/tabela.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { GraficosComponent } from './graficos/graficos.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModalComponent,
     TabelaComponent,
+    GraficosComponent,
 
   ],
   imports: [
@@ -40,7 +43,8 @@ import {MatSortModule} from '@angular/material/sort';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    NgxChartsModule
 
 
   ],

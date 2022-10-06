@@ -1,5 +1,5 @@
 <div class="container">
-    <div style="margin-top: 10px;">
+    <div style="margin-top: 12px;">
     <mat-form-field appearance="standard">
       <mat-label>Pesquisa</mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="Pesquisar" #input>
@@ -8,63 +8,32 @@
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
     
-        <ng-container matColumnDef="DS_CAMPO">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Pressão Arterial (mmHg)</th>
-          <td mat-cell *matCellDef="let row"> {{row.DS_CAMPO}} </td>
+        <ng-container matColumnDef="Produto">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Produto</th>
+          <td mat-cell *matCellDef="let row"> {{row.Produto}} </td>
         </ng-container>
     
-        <ng-container matColumnDef="NRO_ORDENACAO">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Número de Ordenação</th>
-          <td mat-cell *matCellDef="let row"> {{row.NRO_ORDENACAO}} </td>
+        <ng-container matColumnDef="Valor">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Valor</th>
+          <td mat-cell *matCellDef="let row"> {{row.Valor}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Tipo_do_produto">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo do produto</th>
+          <td mat-cell *matCellDef="let row"> {{row.Tipo_do_produto}} </td>
         </ng-container>
   
           
-        <ng-container matColumnDef="SEXO">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Sexo</th>
-          <td mat-cell *matCellDef="let row"> {{row.SEXO}} </td>
+        <ng-container matColumnDef="Itens_Acompanhantes">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Itens Acompanhantes</th>
+          <td mat-cell *matCellDef="let row"> {{row.Itens_Acompanhantes}} </td>
         </ng-container>
   
-        <ng-container matColumnDef="IN_OBRIGATORIO">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>IN_OBRIGATORIO</th>
-          <td mat-cell *matCellDef="let row"> {{row.IN_OBRIGATORIO}} </td>
+        <ng-container matColumnDef="Equipe">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Equipe</th>
+          <td mat-cell *matCellDef="let row"> {{row.Equipe}} </td>
         </ng-container>
-  
-        
-        <ng-container matColumnDef="CHAVE1">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Chave 1 </th>
-          <td mat-cell *matCellDef="let row"> {{row.CHAVE1}} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="CHAVE2">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Chave 2 </th>
-          <td mat-cell *matCellDef="let row"> {{row.CHAVE2}} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="TIPO">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </th>
-          <td mat-cell *matCellDef="let row"> {{row.TIPO}} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="LIMITE">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Limite </th>
-          <td mat-cell *matCellDef="let row"> {{row.LIMITE}} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="TIPO2">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo 2 </th>
-          <td mat-cell *matCellDef="let row"> {{row.TIPO2}} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="LIMITE2">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Limite 2 </th>
-          <td mat-cell *matCellDef="let row"> {{row.LIMITE2}} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="OPCOES">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Opções </th>
-          <td mat-cell *matCellDef="let row"> {{row.OPCOES}} </td>
-        </ng-container>
-        
+
         <ng-container matColumnDef="ACOES">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Ações </th>
             <td mat-cell *matCellDef="let row">
@@ -85,7 +54,7 @@
         </tr>
       </table>
     
-      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" aria-label="Select page of users"></mat-paginator>
     </div>
     </div>
   </div>

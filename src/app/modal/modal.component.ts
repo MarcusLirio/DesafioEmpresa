@@ -3,11 +3,11 @@ import { Component, Inject, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { ApiService } from '../Services/api.service';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog'
-interface Sexo {
+interface Celular {
   value: string;
   viewValue: string;
 }
-interface Obrigatorio {
+interface Equipes {
   invalue: string;
   inviewValue: string;
 }
@@ -26,41 +26,29 @@ export class ModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.produtoForm = this.formBuilder.group({
-      DS_CAMPO: ['', Validators.required],
-      NRO_ORDENACAO: ['', Validators.required],
-      SEXO: ['', Validators.required],
-      IN_OBRIGATORIO: ['', Validators.required],
-      CHAVE1: ['', Validators.required],
-      CHAVE2: ['', Validators.required],
-      TIPO: ['', Validators.required],
-      LIMITE: ['', Validators.required],
-      TIPO2: ['', Validators.required],
-      LIMITE2: ['', Validators.required],
-      OPCOES: ['', Validators.required],
+      Produto: ['', Validators.required],
+      Valor: ['', Validators.required],
+      Itens_Acompanhantes: ['', Validators.required],
+      Tipo_do_produto: ['', Validators.required],
+      Equipe: ['', Validators.required],
     });
     if(this.editDados){
       this.acaoBtn = "Atualizar";
-      this.produtoForm.controls['DS_CAMPO'].setValue(this.editDados.DS_CAMPO);
-      this.produtoForm.controls['NRO_ORDENACAO'].setValue(this.editDados.NRO_ORDENACAO);
-      this.produtoForm.controls['SEXO'].setValue(this.editDados.SEXO);
-      this.produtoForm.controls['IN_OBRIGATORIO'].setValue(this.editDados.IN_OBRIGATORIO);
-      this.produtoForm.controls['CHAVE1'].setValue(this.editDados.CHAVE1);
-      this.produtoForm.controls['CHAVE2'].setValue(this.editDados.CHAVE2);
-      this.produtoForm.controls['TIPO'].setValue(this.editDados.TIPO);
-      this.produtoForm.controls['LIMITE'].setValue(this.editDados.LIMITE);
-      this.produtoForm.controls['TIPO2'].setValue(this.editDados.TIPO2);
-      this.produtoForm.controls['LIMITE2'].setValue(this.editDados.LIMITE2);
-      this.produtoForm.controls['OPCOES'].setValue(this.editDados.OPCOES);
+      this.produtoForm.controls['Produto'].setValue(this.editDados.Produto);
+      this.produtoForm.controls['Valor'].setValue(this.editDados.Valor);
+      this.produtoForm.controls['Tipo_do_produto'].setValue(this.editDados.Valor);
+      this.produtoForm.controls['Itens_Acompanhantes'].setValue(this.editDados.Itens_Acompanhantes);
+      this.produtoForm.controls['Equipe'].setValue(this.editDados.Equipe);
 
     }
   }
-  sexos: Sexo[] = [
-    {value: 'Masculino', viewValue: 'Masculino'},
-    {value: 'Feminino', viewValue: 'Feminino'},
-    {value: 'Sem gênero', viewValue: 'Sem gênero'},
+  celular: Celular[] = [
+    {value: 'Samsung', viewValue: 'Samsung'},
+    {value: 'Apple', viewValue: 'Apple'},
+    {value: 'Asus', viewValue: 'Asus'},
   ];
 
-  obrigatorios: Obrigatorio[] = [
+  equipe: Equipes[] = [
     {invalue: 'Sim', inviewValue: 'Sim'},
     {invalue: 'Não', inviewValue: 'Não'},
   ];

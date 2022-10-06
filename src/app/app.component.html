@@ -2,9 +2,14 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>Tabela do Vander</span>
+  <span>Tabela</span>
   <span class="example-spacer"></span>
-  <button mat-raised-button color="warn" (click)="openDialog()">Adicionar Parametros</button>
+  <button mat-raised-button color="warn" (click)="openDialog()">Adicionar Produtos</button>
 </mat-toolbar>
 
-<tabela></tabela>
+<tabela 
+[displayedColumns]="displayedColumns"  
+[dataSource]="dataSource" 
+></tabela>
+
+<graficos></graficos>
